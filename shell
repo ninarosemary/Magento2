@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/bash -e
 if [ -z "$1" ]
   then
-    docker-compose exec --user www-data apache bash
+    docker-compose exec -T --user www-data apache bash
 else
-    docker-compose exec --user $@ apache bash
+    docker-compose exec -T --user $@ apache bash
 fi
